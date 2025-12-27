@@ -77,7 +77,7 @@ app.get('/discussions', async(req, res) => {
             WHERE users.user_id IS DISTINCT FROM $1
             ORDER BY discussion_id ASC;
         `
-        const values = [15]
+        const values = [D]
         const results = await db.query(sql, values);
 
         res.json({
